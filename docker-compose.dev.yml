@@ -1,0 +1,17 @@
+# Versión del compose file. Esta línea es obligatoria.
+version: "3.8"
+
+services:
+  # nombre del servicio.
+  astro:
+    # crea una imagen con los ficheros del directorio actual y su dev.Dockerfile.
+    build: 
+      context: "."
+      dockerfile: dev.Dockerfile
+    # Sección para definir los bindmount.
+    volumes: 
+      #<local path>:<container path> # el directorio "." actual se montará en "/src" en el contenedor.
+      - .:/home/node
+      # indica que ficheros debe ignorar
+      - /home/node/node_modules
+    command: npm run dev -- --host 0.0.0.0
