@@ -3,33 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Astro in Docker">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<h1>Welcome to <span class="text-gradient">Astro in Docker</span></h1>
 		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			This Astro page is running containerized using Docker. Source files exists in your local binded to Docker in <code>/home/node</code>. No nodejs or npm needed to run, only Docker.
+		</p>
+		<p class="instructions">
+			To start, run <code>./dev.sh</code> or the command <code>docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build</code>
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+				href="./hello"
+				title="Say hello"
+				body="Just a example markdown page"
 			/>
 		</ul>
 	</main>
