@@ -1,0 +1,12 @@
+# Versión del compose file. Esta linea es obligatoria.
+version: "3.8"
+
+# Servicios que componen nuestra aplicación.
+## Un servicio puede estar compuesto por uno o más contenedores.
+services:
+  # nombre del servicio.
+  astro:
+    # crea una imagen con los ficheros del directorio actual y su Dockerfile.
+    build: .
+    ports:
+      - "3000:80"
